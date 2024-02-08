@@ -10,19 +10,22 @@
     <div id="stars" class="star" value="5"></div>
     <div id="stars2" class="star" value="10"></div>
     <div id="stars3" class="star" value="15"></div>
-    <div id="check_container">
-      <div id="check_dark">
-        <div class="checkbox"></div>
-        Darkmode
+    <section id="outer_top">
+      <div id="check_container">
+        <div id="check_dark">
+          <div class="checkbox" onclick="darkMode()"></div>
+          Darkmode
+        </div>
+        <div id="check_light">
+          <div class="checkbox"></div>
+          Lightmode
+        </div>
       </div>
-      <div id="check_light">
-        <div class="checkbox"></div>
-        Lightmode
-      </div>
-      <button class="button" id="btn_darkmode" onclick="darkMode()">
+      <div id="lang_selector"></div>
+      <!-- <button class="button" id="btn_darkmode" onclick="darkMode()">
         Darkmode
-      </button>
-    </div>
+      </button> -->
+    </section>
     <main>
       <div class="container">
         <section id="title">

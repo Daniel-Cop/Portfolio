@@ -4,14 +4,14 @@ let dark = true;
 
 // FUNCTION TO CREATE #N STARS
 function multiple_star(n) {
-  let box_shadow = `${Math.floor(Math.random() * 2000)}px ${Math.floor(
-    Math.random() * 2000
+  let box_shadow = `${Math.floor(Math.random() * 3000)}px ${Math.floor(
+    Math.random() * 3000
   )}px var(--stars-color)`;
 
   for (let i = 2; i < n; i++) {
     box_shadow = `${box_shadow}, ${Math.floor(
-      Math.random() * 2000
-    )}px ${Math.floor(Math.random() * 2000)}px var(--stars-color)`;
+      Math.random() * 3000
+    )}px ${Math.floor(Math.random() * 3000)}px var(--stars-color)`;
   }
   return box_shadow;
 }
