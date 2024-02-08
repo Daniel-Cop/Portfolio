@@ -1,0 +1,83 @@
+:root {
+    --random-position: 0px;
+    --shadows-small: 0px;
+    --shadows-medium: 0px;
+    --shadows-big: 0px;
+    --night-gradient: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+    --day-gradient: radial-gradient(ellipse at bottom, #f0ff9d 0%, #ffea76 100%);
+}
+
+body {
+    height: 2000px;
+    width: 2000px;
+    margin: 0;
+    background-image: var(--day-gradient);
+    overflow: hidden;
+    background-size: cover;
+}
+
+#stars {
+    width: 1px;
+    height: 1px;
+    background: transparent;
+    box-shadow: var(--shadows-small);
+    animation: animStar 50s linear infinite;
+}
+
+#stars:after {
+    content: "";
+    position: absolute;
+    top: 2000px;
+    width: 1px;
+    height: 1px;
+    background: transparent;
+    box-shadow: var(--shadows-small);
+}
+
+#stars2 {
+    width: 2px;
+    height: 2px;
+    background: transparent;
+    box-shadow: var(--shadows-medium);
+    animation: animStar 100s linear infinite;
+}
+
+#stars2:after {
+    content: "";
+    position: absolute;
+    top: 2000px;
+    width: 2px;
+    height: 2px;
+    background: transparent;
+    box-shadow: var(--shadows-medium);
+}
+
+#stars3 {
+    width: 3px;
+    height: 3px;
+    background: transparent;
+    box-shadow: var(--shadows-big);
+    animation: animStar 150s linear infinite;
+}
+
+#stars3:after {
+    content: "";
+    position: absolute;
+    top: 2000px;
+    width: 3px;
+    height: 3px;
+    background: transparent;
+    box-shadow: var(--shadows-big);
+}
+
+.button {
+    background-color: white;
+    border-radius: 5px;
+    width: fit-content;
+    padding: 5px;
+}
+
+@keyframes animStar {
+    from {transform: translateY(0px);}
+    to {transform: translateY(-2000px)}
+}
