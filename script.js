@@ -22,16 +22,26 @@ function darkMode() {
     dark = false;
     root.style.setProperty(
       "--night-gradient",
-      "radial-gradient(ellipse at bottom, #f0ff9d 0%, #ffea76 100%)"
+      "radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%)"
     );
-    root.style.setProperty("--stars-color", "black");
+    root.style.setProperty("--stars-color", "white");
+    root.style.setProperty(
+      "--icons-color",
+      "invert(100%) sepia(100%) saturate(0%) hue-rotate(108deg) brightness(104%) contrast(104%)"
+    );
+    document.getElementById("btn_darkmode").innerText = "Lightmode";
   } else {
     dark = true;
     root.style.setProperty(
       "--night-gradient",
-      "radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%)"
+      "radial-gradient(ellipse at bottom, #ececec 0%, #c4c4c4 100%)"
     );
-    root.style.setProperty("--stars-color", "white");
+    root.style.setProperty("--stars-color", "black");
+    root.style.setProperty(
+      "--icons-color",
+      "invert(0%) sepia(100%) saturate(7461%) hue-rotate(92deg) brightness(91%) contrast(109%)"
+    );
+    document.getElementById("btn_darkmode").innerText = "Darkmode";
   }
 }
 

@@ -4,9 +4,10 @@
     --shadows-small: ;
     --shadows-medium: ;
     --shadows-big: ;
-    --stars-color: white;
-    --night-gradient: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
-    --day-gradient: radial-gradient(ellipse at bottom, #f0ff9d 0%, #ffea76 100%);
+    --stars-color: black;
+    --night-gradient: radial-gradient(ellipse at bottom, #ececec 0%, #c4c4c4 100%);
+    --day-gradient: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+    --icons-color: ;
 }
 
 * {
@@ -23,9 +24,36 @@ body {
     overflow: hidden;
     background-size: cover;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    color: var(--stars-color);
+    font-size: 20px;
 }
+
+h1 {
+    font-size: 6rem;
+    padding: 1rem 2rem 1rem 2rem;
+}
+
+a,
+a:hover,
+a:visited {
+    color: var(--stars-color);
+    text-decoration: none;
+    padding: 1rem 2rem 1rem 2rem;
+}
+
+a:hover {
+    font-weight: bold;
+}
+
+.icon {
+    width: 50px;
+    height: 50px;
+    filter: var(--icons-color);
+}
+
 
 #stars {
     width: 1px;
@@ -67,13 +95,35 @@ body {
     padding: 5px;
 }
 
+#btn_darkmode {
+    position: absolute;
+    top: 20px;
+    left: 100px;
+}
+
+/* CHECKBOX DARKMODE */
+.checkbox {
+    height: 20px;
+    width: 20px;
+    border: 1px solid var(--stars-color);
+}
+
+#check_container {
+    display: flex;
+}
+
+#check_dark,
+#check_light {
+    display: flex;
+}
+
 /*  MOVING ANIMATION
 @keyframes animStar {
     from {transform: translateY(0px);}
     to {transform: translateY(-2000px)}
 }
-  TO CALL IT "animation: animStar 50s linear infinite;"
-  #stars:after {
+TO CALL IT "animation: animStar 50s linear infinite;"
+#stars:after {
     content: "";
     position: absolute;
     top: 2000px;
@@ -104,14 +154,49 @@ body {
 
 /* MAIN */
 main {
+    --s: 180px; /* size on the corner */
+    --t: 5px;  /* thickness of the border */
+    --g: 20px; /* gap between the border and image */
+    display: flex;
     width: 90%;
     height: 90%;
-    border-width: 3px;
-    border-style: solid;
-    border-image: 
-      linear-gradient(
-        to bottom, 
-        var(--stars-color), 
-        transparent
-      ) 1 30%;
+    padding: calc(var(--g) + var(--t));
+    outline: var(--t) solid var(--stars-color);
+    outline-offset: calc(-1*var(--t));
+    mask:
+      conic-gradient(at var(--s) var(--s),#0000 75%,#000 0)
+      0 0/calc(100% - var(--s)) calc(100% - var(--s)),
+      linear-gradient(#000 0 0) content-box;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+/* TITLE SECTION */
+#title {
+    height: 65%;
+}
+
+#title p {
+    padding: 0rem 2rem 1rem 2rem;
+    font-size: 3rem;
+}
+
+ #title nav {
+    display: flex;
+    flex-direction: column;
+    padding-top: 3rem;
+}
+
+/* MAIN CONTET SECTION */
+
+/* LINK SECTION */
+#links {
+    display: flex;
+    flex-direction: column-reverse;
+    height: 35%;
 }
