@@ -16,33 +16,41 @@ function multiple_star(n) {
   return box_shadow;
 }
 
-// DARKMODE FUNCTION
+// DARKMODE/LIGHT FUNCTION
 function darkMode() {
-  if (dark) {
-    dark = false;
-    root.style.setProperty(
-      "--night-gradient",
-      "radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%)"
-    );
-    root.style.setProperty("--stars-color", "white");
-    root.style.setProperty(
-      "--icons-color",
-      "invert(100%) sepia(100%) saturate(0%) hue-rotate(108deg) brightness(104%) contrast(104%)"
-    );
-    document.getElementById("btn_darkmode").innerText = "Lightmode";
-  } else {
-    dark = true;
-    root.style.setProperty(
-      "--night-gradient",
-      "radial-gradient(ellipse at bottom, #ececec 0%, #c4c4c4 100%)"
-    );
-    root.style.setProperty("--stars-color", "black");
-    root.style.setProperty(
-      "--icons-color",
-      "invert(0%) sepia(100%) saturate(7461%) hue-rotate(92deg) brightness(91%) contrast(109%)"
-    );
-    document.getElementById("btn_darkmode").innerText = "Darkmode";
-  }
+  root.style.setProperty(
+    "--night-gradient",
+    "radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%)"
+  );
+  root.style.setProperty("--stars-color", "white");
+  root.style.setProperty(
+    "--icons-color",
+    "invert(100%) sepia(100%) saturate(0%) hue-rotate(108deg) brightness(104%) contrast(104%)"
+  );
+  document
+    .getElementById("light")
+    .style.setProperty("background-color", "transparent");
+  document
+    .getElementById("dark")
+    .style.setProperty("background-color", "var(--stars-color)");
+}
+
+function lightMode() {
+  root.style.setProperty(
+    "--night-gradient",
+    "radial-gradient(ellipse at bottom, #ececec 0%, #c4c4c4 100%)"
+  );
+  root.style.setProperty("--stars-color", "black");
+  root.style.setProperty(
+    "--icons-color",
+    "invert(0%) sepia(100%) saturate(7461%) hue-rotate(92deg) brightness(91%) contrast(109%)"
+  );
+  document
+    .getElementById("dark")
+    .style.setProperty("background-color", "transparent");
+  document
+    .getElementById("light")
+    .style.setProperty("background-color", "var(--stars-color)");
 }
 
 // PARALLAX FUCNTION

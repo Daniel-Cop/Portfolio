@@ -46,6 +46,7 @@ a:visited {
   color: var(--stars-color);
   text-decoration: none;
   padding: 1rem 2rem 1rem 2rem;
+  width: fit-content;
 }
 
 a:hover {
@@ -53,8 +54,8 @@ a:hover {
 }
 
 .icon {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   filter: var(--icons-color);
 }
 
@@ -90,23 +91,10 @@ a:hover {
   left: 0px;
 }
 
-.button {
-  background-color: white;
-  border-radius: 5px;
-  width: fit-content;
-  padding: 5px;
-}
-
-#btn_darkmode {
-  position: absolute;
-  top: 20px;
-  left: 100px;
-}
-
 /* OUTER SECTION TOP */
 .checkbox {
-  height: 20px;
-  width: 20px;
+  height: 16px;
+  width: 16px;
   border: 1px solid var(--stars-color);
 }
 
@@ -114,17 +102,28 @@ a:hover {
   display: flex;
   width: 90%;
   justify-content: space-between;
+  font-size: 18px;
 }
 
-#check_container {
+#check_container,
+#lang_selector {
   display: flex;
 }
 
 #check_dark,
 #check_light {
   display: flex;
+  cursor: default;
 }
 
+#dark,
+#light {
+  margin: 0 0.5rem;
+}
+
+#light {
+  background-color: var(--stars-color);
+}
 /*  MOVING ANIMATION
 @keyframes animStar {
     from {transform: translateY(0px);}
@@ -162,8 +161,8 @@ TO CALL IT "animation: animStar 50s linear infinite;"
 /* MAIN */
 main {
   --s: 180px; /* size on the corner */
-  --t: 5px; /* thickness of the border */
-  --g: 20px; /* gap between the border and image */
+  --t: 3px; /* thickness of the border */
+  --g: 10px; /* gap between the border and image */
   display: flex;
   width: 90%;
   height: 90%;
@@ -204,4 +203,7 @@ main {
   display: flex;
   flex-direction: column-reverse;
   height: 35%;
+}
+#links a {
+  padding: 0;
 }
