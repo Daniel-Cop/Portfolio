@@ -11,7 +11,6 @@
     #c4c4c4 100%
   );
   --day-gradient: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
-  --icons-color: ;
 }
 
 * {
@@ -56,7 +55,7 @@ a:hover {
 .icon {
   width: 40px;
   height: 40px;
-  filter: var(--icons-color);
+  fill: var(--stars-color);
 }
 
 #stars {
@@ -113,7 +112,7 @@ a:hover {
 #check_dark,
 #check_light {
   display: flex;
-  cursor: default;
+  cursor: pointer;
 }
 
 #dark,
@@ -161,7 +160,7 @@ TO CALL IT "animation: animStar 50s linear infinite;"
 /* MAIN */
 main {
   --s: 180px; /* size on the corner */
-  --t: 3px; /* thickness of the border */
+  --t: 2px; /* thickness of the border */
   --g: 10px; /* gap between the border and image */
   display: flex;
   width: 90%;
