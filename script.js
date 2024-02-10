@@ -1,6 +1,5 @@
 // SETTING VARABLE
 let root = document.querySelector(":root");
-let dark = true;
 
 // FUNCTION TO CREATE #N STARS
 function multiple_star(n) {
