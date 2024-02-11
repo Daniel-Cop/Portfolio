@@ -1,0 +1,15 @@
+{
+  "subtitle": "Developer Web",
+  "box_fill_en": "■",
+  "box_fill_it": "□",
+  "box_fill_fr": "□",
+  "choise_en": "English",
+  "choise_it": "Italian",
+  "choise_fr": "French",
+  "nav_about": "About me",
+  "nav_projects": "Projects",
+  "nav_contact": "Contact",
+  "main_about": "EN Lorem ipsum dolor sit, amet consectetur adipisicing elit. Placeat ratione adipisci, iure dolore sed recusandae laudantium, nostrum aspernatur deserunt est quo perferendis corrupti in! Vero, quaerat dolores? Ea, numquam similique.",
+  "main_proj": "EN Project list",
+  "main_contact": "EN How to contact me"
+}
