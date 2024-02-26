@@ -128,8 +128,11 @@ root.style.setProperty("--shadows-small", creation_stars_small);
 root.style.setProperty("--shadows-medium", creation_stars_medium);
 root.style.setProperty("--shadows-big", creation_stars_big);
 
-document.addEventListener("mousemove", parallax);
-document.addEventListener("drag", parallax);
+if (screen_w > 768) {
+  document.addEventListener("mousemove", parallax);
+} else {
+  document.addEventListener("deviceorientation", parallax);
+}
 
 window.addEventListener("DOMContentLoaded", async () => {
   const userPreferredLanguage = localStorage.getItem("language") || "en";
