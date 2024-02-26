@@ -31,15 +31,6 @@ function parallax(event) {
   });
 }
 
-function parallaxM(event) {
-  this.querySelectorAll("body .star").forEach((shift) => {
-    const position = shift.getAttribute("value");
-    const x = (window.innerWidth - event.beta * position) / 90;
-    const y = (window.innerHeight - event.gamma * position) / 90;
-    shift.style.transform = `translateX(${x}px) translateY(${y}px)`;
-  });
-}
-
 // LANGUAGE FUNCTIONS
 function updateContent(langData) {
   document.querySelectorAll("[data-i18n]").forEach((element) => {
@@ -144,7 +135,7 @@ root.style.setProperty("--shadows-big", creation_stars_big);
 if (window.innerWidth > 768) {
   document.addEventListener("mousemove", parallax);
 } else {
-  document.addEventListener("deviceorientation", parallaxM);
+  document.addEventListener("deviceorientation", parallax);
 }
 
 window.addEventListener("DOMContentLoaded", async () => {
