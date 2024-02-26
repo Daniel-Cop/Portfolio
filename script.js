@@ -6,13 +6,17 @@ let screen_h = screen.height;
 // FUNCTION TO CREATE STARS
 function multiple_star(n) {
   let box_shadow = `${Math.floor(
-    Math.random() * (screen_w * 1.5)
-  )}px ${Math.floor(Math.random() * (screen_h * 1.5))}px var(--stars-color)`;
+    Math.random() * (window.innerWidth * 1.5)
+  )}px ${Math.floor(
+    Math.random() * (window.innerHeight * 1.5)
+  )}px var(--stars-color)`;
 
   for (let i = 2; i < n; i++) {
     box_shadow = `${box_shadow}, ${Math.floor(
-      Math.random() * (screen_w * 1.5)
-    )}px ${Math.floor(Math.random() * (screen_h * 1.5))}px var(--stars-color)`;
+      Math.random() * (window.innerWidth * 1.5)
+    )}px ${Math.floor(
+      Math.random() * (window.innerHeight * 1.5)
+    )}px var(--stars-color)`;
   }
   return box_shadow;
 }
@@ -23,6 +27,15 @@ function parallax(event) {
     const position = shift.getAttribute("value");
     const x = (window.innerWidth - event.pageX * position) / 90;
     const y = (window.innerHeight - event.pageY * position) / 90;
+    shift.style.transform = `translateX(${x}px) translateY(${y}px)`;
+  });
+}
+
+function parallaxM(event) {
+  this.querySelectorAll("body .star").forEach((shift) => {
+    const position = shift.getAttribute("value");
+    const x = (window.innerWidth - event.beta * position) / 90;
+    const y = (window.innerHeight - event.gamma * position) / 90;
     shift.style.transform = `translateX(${x}px) translateY(${y}px)`;
   });
 }
@@ -128,10 +141,10 @@ root.style.setProperty("--shadows-small", creation_stars_small);
 root.style.setProperty("--shadows-medium", creation_stars_medium);
 root.style.setProperty("--shadows-big", creation_stars_big);
 
-if (screen_w > 768) {
+if (window.innerWidth > 768) {
   document.addEventListener("mousemove", parallax);
 } else {
-  document.addEventListener("deviceorientation", parallax);
+  document.addEventListener("deviceorientation", parallaxM);
 }
 
 window.addEventListener("DOMContentLoaded", async () => {
