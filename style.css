@@ -94,6 +94,16 @@ a {
   right: var(--pad);
   top: var(--pad);
   bottom: var(--pad);
+  transition: 1s;
+}
+
+body.is-preloaded .frame {
+  left: 50%;
+  right: 50%;
+  top: 50%;
+  bottom: 50%;
+  padding: 0;
+  overflow: hidden;
 }
 
 .frame_line {
@@ -165,6 +175,12 @@ a {
   display: flex;
   column-gap: 15px;
   cursor: pointer;
+  transition: opacity 1s;
+  transition-delay: 1s;
+}
+
+body.is-preloaded .theme {
+  opacity: 0%;
 }
 
 .colors {
@@ -204,59 +220,99 @@ a {
 header {
   position: fixed;
   z-index: 10;
-  left: calc(var(--pad) * 2);
-  top: calc(var(--pad) * 2);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: top 0.5s;
+}
+
+header.on-top {
+  top: calc(var(--pad) * 3);
+}
+
+header div.title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 0 solid;
+  border-color: var(--stars-color);
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+  padding: var(--pad);
+  transition: 1s;
+}
+
+body.is-preloaded header div.title {
+  overflow: hidden;
+  padding: 0;
+  max-height: 0px;
+}
+
+header.on-top div.title {
+  overflow: hidden;
+  padding: 0;
+  max-height: 0px;
+}
+
+header div.title:before {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: calc(2.75rem + 2px);
+  left: calc(50% - 1px);
+  width: 1px;
+  height: 50px;
+  background: var(--stars-color);
 }
 
 h1 {
-  margin: -0.1em 0 0 -0.04em;
   font-weight: 200;
   font-size: 30px;
   cursor: default;
+  text-transform: uppercase;
 }
 
 header p {
   margin-top: 5px;
   font-weight: 400;
+  text-transform: uppercase;
 }
 
 nav {
   margin-top: 50px;
+  text-align: center;
 }
 
 nav ul {
   display: flex;
-  flex-direction: column;
+  justify-content: space-evenly;
   row-gap: 15px;
+  margin-bottom: 0;
+  list-style: none;
+  padding-left: 0;
+  border: solid 1px var(--stars-color);
+  border-radius: 4px;
 }
 
 nav ul li {
   position: relative;
 }
 
-nav ul li .dot {
-  left: 0;
-  top: 2px;
-  font-size: 16px;
-  display: none;
-  pointer-events: none;
-  transition-duration: 0.4s;
-  transition-timing-function: cubic-bezier(0.1, 0.4, 0.2, 1);
-}
-
 nav ul li .text {
   position: relative;
-  transition-duration: 0.4s;
-  transition-timing-function: cubic-bezier(0.1, 0.4, 0.2, 1);
+  display: block;
+  min-width: 6.5rem;
+  height: 2.75rem;
+  line-height: 2.75rem;
+  padding: 0 1.25rem 0 1.45rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
 }
 
 nav ul li a:hover {
   font-weight: bold;
 }
 
-nav ul li.is-selected .dot {
-  display: inline;
-}
 /*
 nav ul li.is-selected .text {
   opacity: 0;
@@ -303,6 +359,12 @@ div#container_main .page.is-selected {
   flex-direction: column;
   row-gap: 10px;
   z-index: 10;
+  transition: 1s;
+  transition-delay: 1s;
+}
+
+body.is-preloaded #icon_link {
+  opacity: 0%;
 }
 
 .icon {

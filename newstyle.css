@@ -1,0 +1,114 @@
+:root {
+  --random-position: ;
+  --shadows-small: ;
+  --shadows-medium: ;
+  --shadows-big: ;
+  --stars-color: black;
+  --night-gradient: radial-gradient(
+    ellipse at bottom,
+    #ececec 0%,
+    #c4c4c4 100%
+  );
+  --day-gradient: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  --pad: max(20px, 4vmin);
+  --fs-text: 12px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  display: block;
+  color: var(--stars-color);
+  font-size: var(--fs-text);
+}
+
+/* HEADER */
+header {
+  position: fixed;
+  z-index: 10;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+header div.title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 0 solid;
+  border-color: var(--stars-color);
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+  padding: var(--pad);
+  transition: 1s;
+}
+
+body.is-preloaded header div.title {
+  overflow: hidden;
+  padding: 0;
+  max-height: 0px;
+}
+
+header div.title:before {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: calc(2.75rem + 2px);
+  left: calc(50% - 1px);
+  width: 1px;
+  height: 50px;
+  background: var(--stars-color);
+}
+
+h1 {
+  font-weight: 200;
+  font-size: 30px;
+  cursor: default;
+  text-transform: uppercase;
+}
+
+header p {
+  margin-top: 5px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+nav {
+  margin-top: 50px;
+  text-align: center;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-evenly;
+  row-gap: 15px;
+  margin-bottom: 0;
+  list-style: none;
+  padding-left: 0;
+  border: solid 1px var(--stars-color);
+  border-radius: 4px;
+}
+
+nav ul li {
+  position: relative;
+}
+
+nav ul li .text {
+  position: relative;
+  display: block;
+  min-width: 6.5rem;
+  height: 2.75rem;
+  line-height: 2.75rem;
+  padding: 0 1.25rem 0 1.45rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+
+nav ul li a:hover {
+  font-weight: bold;
+}

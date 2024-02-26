@@ -99,6 +99,7 @@ function about() {
   document.getElementById("about_me").classList.add("is-selected");
   document.getElementById("projects").classList.remove("is-selected");
   document.getElementById("contact").classList.remove("is-selected");
+  document.getElementById("header").classList.toggle("on-top");
 }
 
 function projects() {
@@ -137,3 +138,10 @@ window.addEventListener("DOMContentLoaded", async () => {
   changeMode(userPreferredTheme);
   updateContent(langData);
 }); // call updateContent() on page load
+
+// load animation
+window.addEventListener("load", function () {
+  window.setTimeout(function () {
+    document.getElementById("body").classList.remove("is-preloaded");
+  }, 100);
+});
