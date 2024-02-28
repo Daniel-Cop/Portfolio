@@ -5,18 +5,14 @@ let screen_h = screen.height;
 
 // FUNCTION TO CREATE STARS
 function multiple_star(n) {
-  let box_shadow = `${Math.floor(
-    Math.random() * (window.innerWidth * 1.5)
-  )}px ${Math.floor(
-    Math.random() * (window.innerHeight * 1.5)
+  let box_shadow = `${Math.floor(Math.random() * 2000)}px ${Math.floor(
+    Math.random() * 2000
   )}px var(--stars-color)`;
 
   for (let i = 2; i < n; i++) {
     box_shadow = `${box_shadow}, ${Math.floor(
-      Math.random() * (window.innerWidth * 1.5)
-    )}px ${Math.floor(
-      Math.random() * (window.innerHeight * 1.5)
-    )}px var(--stars-color)`;
+      Math.random() * 2000
+    )}px ${Math.floor(Math.random() * 2000)}px var(--stars-color)`;
   }
   return box_shadow;
 }
@@ -125,9 +121,9 @@ function contact() {
 }
 
 // CALLING FUNCTIONS AND  CHANGING CSS
-const creation_stars_small = multiple_star(800);
-const creation_stars_medium = multiple_star(400);
-const creation_stars_big = multiple_star(150);
+const creation_stars_small = multiple_star(700);
+const creation_stars_medium = multiple_star(200);
+const creation_stars_big = multiple_star(100);
 root.style.setProperty("--shadows-small", creation_stars_small);
 root.style.setProperty("--shadows-medium", creation_stars_medium);
 root.style.setProperty("--shadows-big", creation_stars_big);

@@ -175,6 +175,7 @@ body.is-preloaded .frame {
   display: flex;
   column-gap: 15px;
   cursor: pointer;
+  opacity: 100%;
   transition: opacity 1s;
   transition-delay: 1s;
 }
@@ -223,11 +224,18 @@ header {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  transition: top 0.5s;
+  transition: top 0.75s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 header.on-top {
-  top: calc(var(--pad) * 3);
+  top: calc(var(--pad) + 50px + var(--pad));
+}
+
+header div.back-button {
+
 }
 
 header div.title {
@@ -239,20 +247,24 @@ header div.title {
   border-top-width: 1px;
   border-bottom-width: 1px;
   padding: var(--pad);
-  transition: 1s;
+  max-height: 500px;
+  transition: 0.75s;
+  transition-property: max-height,  padding;
+
 }
 
 body.is-preloaded header div.title {
   overflow: hidden;
-  padding: 0;
+  padding: 0 var(--pad) 0 var(--pad);
   max-height: 0px;
 }
 
 header.on-top div.title {
   overflow: hidden;
-  padding: 0;
+  padding: 0 var(--pad) 0 var(--pad);
   max-height: 0px;
 }
+
 
 header div.title:before {
   content: "";
@@ -322,19 +334,20 @@ nav ul li.is-selected .text {
 main {
   position: fixed;
   z-index: 2;
-  right: calc(var(--pad) + 0.5em);
-  bottom: calc(var(--pad) + 0.5em);
-  width: 50%;
-  height: calc(100% - var(--pad) * 2);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: min(600px, calc(100% - (var(--pad)*4)));
+  height: 45%;
   overflow: hidden;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
 }
 
 #container_main {
   position: relative;
   width: 100%;
-  text-align: right;
+  text-align: center;
 }
 
 div#container_main .page {
@@ -359,7 +372,7 @@ div#container_main .page.is-selected {
   flex-direction: column;
   row-gap: 10px;
   z-index: 10;
-  transition: 1s;
+  transition: opacity 1s;
   transition-delay: 1s;
 }
 
