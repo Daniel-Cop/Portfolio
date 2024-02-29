@@ -174,11 +174,10 @@ root.style.setProperty("--shadows-big", creation_stars_big);
 if (viewportWidth >= "1025") {
   document.addEventListener("mousemove", parallax);
 } else if (viewportWidth <= "1024") {
-  if (typeof DeviceMotionEvent.requestPermission === "function") {
+  if (typeof DeviceOrientationEvent.requestPermission === "function") {
     DeviceOrientationEvent.requestPermission()
-      .then(permissionState => {
+      .then((permissionState) => {
         if (permissionState === "granted") {
-          console.log(permissionState);
           deviceMovement();
         }
       })
