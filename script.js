@@ -176,7 +176,7 @@ if (viewportWidth >= "1025") {
 } else if (viewportWidth <= "1024") {
   if (typeof DeviceMotionEvent.requestPermission === "function") {
     DeviceOrientationEvent.requestPermission()
-      .then((permissionState) => {
+      .then(permissionState => {
         if (permissionState === "granted") {
           console.log(permissionState);
           deviceMovement();
