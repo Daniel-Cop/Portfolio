@@ -29,28 +29,24 @@ function parallax(event) {
 }
 
 deviceMovement = function () {
-  var dataRangeImages = Array.prototype.slice.call(
+  let dataRangeImages = Array.prototype.slice.call(
     document.querySelectorAll("body .star")
   );
 
   function handleOrientation(event) {
     dataRangeImages.forEach(function (el) {
-      var maxX = window.innerWidth - el.clientWidth;
-      var maxY = window.innerHeight - el.clientHeight;
-
-      var x = event.beta;
-      var y = event.gamma;
+      let maxX = window.innerWidth - el.clientWidth;
+      let maxY = window.innerHeight - el.clientHeight;
+      let x = event.beta;
+      let y = event.gamma;
 
       if (x > 90) {
         x = 90;
-      }
-      if (x < -90) {
+      } else if (x < -90) {
         x = -90;
       }
-
       x += 90;
       y += 90;
-
       easeX = (maxX * x) / maxX - 120;
       easeY = (maxY * y) / maxY - 120;
 
@@ -60,7 +56,7 @@ deviceMovement = function () {
   }
 
   window.addEventListener("deviceorientation", handleOrientation);
-};
+}; // parallax on smartphone orientation
 
 // LANGUAGE FUNCTIONS
 function updateContent(langData) {
@@ -178,7 +174,17 @@ root.style.setProperty("--shadows-big", creation_stars_big);
 if (viewportWidth >= "1025") {
   document.addEventListener("mousemove", parallax);
 } else if (viewportWidth <= "1024") {
-  deviceMovement();
+  if (typeof DeviceMotionEvent.requestPermission === "function") {
+    DeviceOrientationEvent.requestPermission()
+      .then((response) => {
+        if (response == "granted") {
+          deviceMovement();
+        }
+      })
+      .catch(console.error);
+  } else {
+    deviceMovement();
+  }
 }
 
 window.addEventListener("DOMContentLoaded", async () => {
