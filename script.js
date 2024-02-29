@@ -55,7 +55,17 @@ deviceMovement = function () {
     });
   }
 
-  window.addEventListener("deviceorientation", handleOrientation);
+  if (typeof DeviceMotionEvent.requestPermission === "function") {
+    DeviceOrientationEvent.requestPermission()
+      .then((response) => {
+        if (response == "granted") {
+          window.addEventListener("deviceorientation", handleOrientation);
+        }
+      })
+      .catch(console.error);
+  } else {
+    window.addEventListener("deviceorientation", handleOrientation);
+  }
 }; // parallax on smartphone orientation
 
 // LANGUAGE FUNCTIONS
@@ -174,17 +184,7 @@ root.style.setProperty("--shadows-big", creation_stars_big);
 if (viewportWidth >= "1025") {
   document.addEventListener("mousemove", parallax);
 } else if (viewportWidth <= "1024") {
-  if (typeof DeviceMotionEvent.requestPermission === "function") {
-    DeviceOrientationEvent.requestPermission()
-      .then((response) => {
-        if (response == "granted") {
-          deviceMovement();
-        }
-      })
-      .catch(console.error);
-  } else {
-    deviceMovement();
-  }
+  deviceMovement();
 }
 
 window.addEventListener("DOMContentLoaded", async () => {
