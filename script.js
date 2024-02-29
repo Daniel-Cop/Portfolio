@@ -2,6 +2,7 @@
 let root = document.querySelector(":root");
 let screen_w = screen.width;
 let screen_h = screen.height;
+let viewportWidth = window.innerWidth;
 
 // FUNCTION TO CREATE STARS
 function multiple_star(n) {
@@ -26,6 +27,40 @@ function parallax(event) {
     shift.style.transform = `translateX(${x}px) translateY(${y}px)`;
   });
 }
+
+deviceMovement = function () {
+  var dataRangeImages = Array.prototype.slice.call(
+    document.querySelectorAll("body .star")
+  );
+
+  function handleOrientation(event) {
+    dataRangeImages.forEach(function (el) {
+      var maxX = window.innerWidth - el.clientWidth;
+      var maxY = window.innerHeight - el.clientHeight;
+
+      var x = event.beta;
+      var y = event.gamma;
+
+      if (x > 90) {
+        x = 90;
+      }
+      if (x < -90) {
+        x = -90;
+      }
+
+      x += 90;
+      y += 90;
+
+      easeX = (maxX * x) / maxX - 120;
+      easeY = (maxY * y) / maxY - 120;
+
+      el.style.webkitTransform = "translate(" + easeY + "px," + easeX + "px)";
+      el.style.transform = "translate(" + easeY + "px," + easeX + "px)";
+    });
+  }
+
+  window.addEventListener("deviceorientation", handleOrientation);
+};
 
 // LANGUAGE FUNCTIONS
 function updateContent(langData) {
@@ -92,6 +127,16 @@ async function changeMode(theme) {
 }
 
 // NAV FUNCTIONS
+function back_to() {
+  document.getElementById("header").classList.remove("on-top");
+  document.getElementById("li_about").classList.remove("is-selected");
+  document.getElementById("li_projects").classList.remove("is-selected");
+  document.getElementById("li_contact").classList.remove("is-selected");
+  document.getElementById("about_me").classList.remove("is-selected");
+  document.getElementById("projects").classList.remove("is-selected");
+  document.getElementById("contact").classList.remove("is-selected");
+}
+
 function about() {
   document.getElementById("li_about").classList.add("is-selected");
   document.getElementById("li_projects").classList.remove("is-selected");
@@ -99,7 +144,7 @@ function about() {
   document.getElementById("about_me").classList.add("is-selected");
   document.getElementById("projects").classList.remove("is-selected");
   document.getElementById("contact").classList.remove("is-selected");
-  document.getElementById("header").classList.toggle("on-top");
+  document.getElementById("header").classList.add("on-top");
 }
 
 function projects() {
@@ -109,6 +154,7 @@ function projects() {
   document.getElementById("about_me").classList.remove("is-selected");
   document.getElementById("projects").classList.add("is-selected");
   document.getElementById("contact").classList.remove("is-selected");
+  document.getElementById("header").classList.add("on-top");
 }
 
 function contact() {
@@ -118,6 +164,7 @@ function contact() {
   document.getElementById("about_me").classList.remove("is-selected");
   document.getElementById("projects").classList.remove("is-selected");
   document.getElementById("contact").classList.add("is-selected");
+  document.getElementById("header").classList.add("on-top");
 }
 
 // CALLING FUNCTIONS AND  CHANGING CSS
@@ -128,10 +175,10 @@ root.style.setProperty("--shadows-small", creation_stars_small);
 root.style.setProperty("--shadows-medium", creation_stars_medium);
 root.style.setProperty("--shadows-big", creation_stars_big);
 
-if (window.innerWidth > 768) {
+if (viewportWidth >= "1025") {
   document.addEventListener("mousemove", parallax);
-} else {
-  document.addEventListener("deviceorientation", parallax);
+} else if (viewportWidth <= "1024") {
+  deviceMovement();
 }
 
 window.addEventListener("DOMContentLoaded", async () => {
