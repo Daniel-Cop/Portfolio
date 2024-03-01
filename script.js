@@ -6,14 +6,25 @@ let viewportWidth = window.innerWidth;
 
 // FUNCTION TO CREATE STARS
 function multiple_star(n) {
-  let box_shadow = `${Math.floor(Math.random() * 2000)}px ${Math.floor(
-    Math.random() * 2000
-  )}px var(--stars-color)`;
+  let vertical_spread = 0;
+  let horizontal_spread = 0;
+
+  if (viewportWidth <= 1800) {
+    vertical_spread = 2000;
+    horizontal_spread = 2000;
+  } else {
+    vertical_spread = 3000;
+    horizontal_spread = 3000;
+  }
+
+  let box_shadow = `${Math.floor(
+    Math.random() * vertical_spread
+  )}px ${Math.floor(Math.random() * horizontal_spread)}px var(--stars-color)`;
 
   for (let i = 2; i < n; i++) {
     box_shadow = `${box_shadow}, ${Math.floor(
-      Math.random() * 2000
-    )}px ${Math.floor(Math.random() * 2000)}px var(--stars-color)`;
+      Math.random() * vertical_spread
+    )}px ${Math.floor(Math.random() * horizontal_spread)}px var(--stars-color)`;
   }
   return box_shadow;
 }
