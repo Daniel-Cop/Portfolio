@@ -3,6 +3,7 @@ let root = document.querySelector(":root");
 let screen_w = screen.width;
 let screen_h = screen.height;
 let viewportWidth = window.innerWidth;
+let viewportHeight = window.innerHeight;
 
 // FUNCTION TO CREATE STARS
 function multiple_star(n) {
@@ -10,11 +11,15 @@ function multiple_star(n) {
   let horizontal_spread = 0;
 
   if (viewportWidth <= 1800) {
-    vertical_spread = 2000;
     horizontal_spread = 2000;
   } else {
-    vertical_spread = 3000;
     horizontal_spread = 3000;
+  }
+
+  if (viewportHeight <= 1000) {
+    vertical_spread = 2000;
+  } else {
+    vertical_spread = 3000;
   }
 
   let box_shadow = `${Math.floor(
