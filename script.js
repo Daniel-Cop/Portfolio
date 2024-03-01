@@ -131,6 +131,9 @@ function back_to() {
   document.getElementById("about_me").classList.remove("is-selected");
   document.getElementById("projects").classList.remove("is-selected");
   document.getElementById("contact").classList.remove("is-selected");
+  document.querySelectorAll("body .star").forEach((stars) => {
+    stars.style.top = `0px`;
+  });
 }
 
 function about() {
@@ -141,6 +144,9 @@ function about() {
   document.getElementById("projects").classList.remove("is-selected");
   document.getElementById("contact").classList.remove("is-selected");
   document.getElementById("header").classList.add("on-top");
+  document.querySelectorAll("body .star").forEach((stars) => {
+    stars.style.top = `-1000px`;
+  });
 }
 
 function projects() {
@@ -151,6 +157,9 @@ function projects() {
   document.getElementById("projects").classList.add("is-selected");
   document.getElementById("contact").classList.remove("is-selected");
   document.getElementById("header").classList.add("on-top");
+  document.querySelectorAll("body .star").forEach((stars) => {
+    stars.style.top = `-1000px`;
+  });
 }
 
 function contact() {
@@ -161,6 +170,9 @@ function contact() {
   document.getElementById("projects").classList.remove("is-selected");
   document.getElementById("contact").classList.add("is-selected");
   document.getElementById("header").classList.add("on-top");
+  document.querySelectorAll("body .star").forEach((stars) => {
+    stars.style.top = `-1000px`;
+  });
 }
 
 // CALLING FUNCTIONS AND  CHANGING CSS
