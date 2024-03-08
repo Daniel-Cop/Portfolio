@@ -191,6 +191,97 @@ function contact() {
   });
 }
 
+// SLIDER FUNCTIONS
+const cards = document.getElementsByClassName("card");
+const last_card = cards.length - 1;
+let slider_position = 0;
+
+function nextCard() {
+  cards[slider_position].classList.remove("active_card");
+  cards[slider_position].classList.add("hidden_left");
+
+  switch (slider_position) {
+    case 0:
+      cards[last_card].classList.remove("hidden_left");
+      cards[last_card].classList.add("hidden_right");
+      cards[slider_position].nextElementSibling.classList.remove(
+        "hidden_right"
+      );
+      cards[slider_position].nextElementSibling.classList.add("active_card");
+      break;
+    case last_card:
+      cards[0].classList.remove("hidden_right");
+      cards[0].classList.add("active_card");
+      cards[slider_position].previousElementSibling.classList.remove(
+        "hidden_left"
+      );
+      cards[slider_position].previousElementSibling.classList.add(
+        "hidden_right"
+      );
+      break;
+    default:
+      cards[slider_position].nextElementSibling.classList.remove(
+        "hidden_right"
+      );
+      cards[slider_position].nextElementSibling.classList.add("active_card");
+      cards[slider_position].previousElementSibling.classList.remove(
+        "hidden_left"
+      );
+      cards[slider_position].previousElementSibling.classList.add(
+        "hidden_right"
+      );
+  }
+
+  if (slider_position === last_card) {
+    slider_position = 0;
+  } else {
+    slider_position++;
+  }
+}
+
+function previousCard() {
+  cards[slider_position].classList.remove("active_card");
+  cards[slider_position].classList.add("hidden_right");
+
+  switch (slider_position) {
+    case 0:
+      cards[last_card].classList.remove("hidden_left");
+      cards[last_card].classList.add("active_card");
+      cards[slider_position].nextElementSibling.classList.remove(
+        "hidden_right"
+      );
+      cards[slider_position].nextElementSibling.classList.add("hidden_left");
+      break;
+    case last_card:
+      cards[0].classList.remove("hidden_right");
+      cards[0].classList.add("hidden_left");
+      cards[slider_position].previousElementSibling.classList.remove(
+        "hidden_left"
+      );
+      cards[slider_position].previousElementSibling.classList.add(
+        "active_card"
+      );
+      break;
+    default:
+      cards[slider_position].nextElementSibling.classList.remove(
+        "hidden_right"
+      );
+      cards[slider_position].nextElementSibling.classList.add("hidden_left");
+      cards[slider_position].previousElementSibling.classList.remove(
+        "hidden_left"
+      );
+      cards[slider_position].previousElementSibling.classList.add(
+        "active_card"
+      );
+  }
+
+  if (slider_position === 0) {
+    slider_position = last_card;
+  } else {
+    slider_position--;
+  }
+}
+
 // CALLING FUNCTIONS AND  CHANGING CSS
 const creation_stars_small = multiple_star(700);
 const creation_stars_medium = multiple_star(200);

@@ -63,6 +63,7 @@ a {
   top: 0px;
   left: 0px;
   transition: top 1s cubic-bezier(0.54, 0.14, 0, 1);
+  border-radius: 30%;
 }
 
 #stars2 {
@@ -74,6 +75,7 @@ a {
   top: 0px;
   left: 0px;
   transition: top 1s cubic-bezier(0.54, 0.14, 0, 1);
+  border-radius: 30%;
 }
 
 #stars3 {
@@ -85,6 +87,7 @@ a {
   top: 0px;
   left: 0px;
   transition: top 1s cubic-bezier(0.54, 0.14, 0, 1);
+  border-radius: 30%;
 }
 
 /* FRAME */
@@ -93,7 +96,6 @@ a {
   --t-b-w: 25%; /* top and bottom width */
   --frame-thickness: 1px;
   position: fixed;
-  z-index: 10;
   left: var(--pad);
   right: var(--pad);
   top: var(--pad);
@@ -349,29 +351,84 @@ main {
   width: min(600px, calc(100% - (var(--pad) * 4)));
   height: 45%;
   overflow: hidden;
-  display: flex;
-  align-items: center;
 }
 
 #container_main {
   position: relative;
   width: 100%;
+  height: 100%;
   text-align: center;
 }
 
-div#container_main .page {
+#container_main .page {
   position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   opacity: 0%;
   width: 100%;
+  height: 100%;
   transition-duration: 0.75s;
   transition-timing-function: cubic-bezier(0.1, 0.4, 0.2, 1);
-  backdrop-filter: blur(6px);
-  background-color: rgba(255, 255, 255, 0.05);
+  /* backdrop-filter: blur(6px);
+  background-color: rgba(255, 255, 255, 0.05); */
 }
 
 div#container_main .page.is-selected {
   opacity: 100%;
   transition-delay: 0.75;
+  z-index: 3;
+}
+
+/* PROJECTS */
+
+#projects div.slider_container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#projects div.navbtn_container {
+  width: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  z-index: 4;
+}
+
+#projects div.navbtn {
+  cursor: pointer;
+}
+
+#projects .card_container {
+  width: 90%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#projects .card {
+  position: absolute;
+  transition: transform 1s ease-out;
+  height: 250px;
+  width: 80px;
+  border: 1px solid var(--stars-color);
+  border-radius: 12px;
+}
+
+#projects .card.active_card {
+  font-size: 2rem;
+}
+
+#projects .card.hidden_left {
+  transform: translateX(-1000px);
+}
+
+#projects .card.hidden_right {
+  transform: translateX(1000px);
 }
 
 /* ICONS LINK*/

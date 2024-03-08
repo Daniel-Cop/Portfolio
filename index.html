@@ -111,17 +111,17 @@
             <p class="content about" data-i18n="main_about"></p>
           </section>
           <section class="page" id="projects">
-            <p data-i18n="main_proj"></p>
+            <!-- <p data-i18n="main_proj"></p> -->
             <div class="slider_container">
-              <div class="navbtn_contianer">
-                <div class="navbtn left"></div>
-                <div class="navbtn right"></div>
+              <div class="navbtn_container">
+                <div class="navbtn left" onclick="previousCard()">L</div>
+                <div class="navbtn right" onclick="nextCard()">R</div>
               </div>
 
-              <div class="">
-                <div class="slide_item"></div>
-                <div class="slide_item"></div>
-                <div class="slide_item"></div>
+              <div class="card_container">
+                <div class="card active_card">1</div>
+                <div class="card hidden_right">2</div>
+                <div class="card hidden_left">3</div>
               </div>
             </div>
           </section>
