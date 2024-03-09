@@ -56,18 +56,16 @@
       <!-- HEADER -->
       <header class="" id="header">
         <div class="back-button" onclick="back_to()">
+          <!-- icon from iconify ep:arrow-up -->
           <svg
             class="icon"
             id="back-icon"
             xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
+            viewBox="0 0 1024 1024"
           >
             <path
-              fill="none"
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="m17 14l-5-5l-5 5"
+              fill="currentColor"
+              d="m488.832 344.32l-339.84 356.672a32 32 0 0 0 0 44.16l.384.384a29.44 29.44 0 0 0 42.688 0l320-335.872l319.872 335.872a29.44 29.44 0 0 0 42.688 0l.384-.384a32 32 0 0 0 0-44.16L535.168 344.32a32 32 0 0 0-46.336 0"
             />
           </svg>
         </div>
@@ -107,15 +105,44 @@
       <!-- MAIN -->
       <main>
         <div id="container_main">
+          <!-- ABOUT -->
           <section class="page" id="about_me">
             <p class="content about" data-i18n="main_about"></p>
+            <div id="progress_container">
+              <svg>
+                <circle class="meter-1" cx="57" cy="57" r="52" />
+              </svg>
+            </div>
           </section>
+          <!-- PROJECTS -->
           <section class="page" id="projects">
             <!-- <p data-i18n="main_proj"></p> -->
             <div class="slider_container">
               <div class="navbtn_container">
-                <div class="navbtn left" onclick="previousCard()">L</div>
-                <div class="navbtn right" onclick="nextCard()">R</div>
+                <div class="navbtn left" onclick="previousCard()">
+                  <svg
+                    class="icon"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 1024 1024"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M609.408 149.376L277.76 489.6a32 32 0 0 0 0 44.672l331.648 340.352a29.12 29.12 0 0 0 41.728 0a30.592 30.592 0 0 0 0-42.752L339.264 511.936l311.872-319.872a30.592 30.592 0 0 0 0-42.688a29.12 29.12 0 0 0-41.728 0"
+                    />
+                  </svg>
+                </div>
+                <div class="navbtn right" onclick="nextCard()">
+                  <svg
+                    class="icon"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 1024 1024"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M340.864 149.312a30.592 30.592 0 0 0 0 42.752L652.736 512L340.864 831.872a30.592 30.592 0 0 0 0 42.752a29.12 29.12 0 0 0 41.728 0L714.24 534.336a32 32 0 0 0 0-44.672L382.592 149.376a29.12 29.12 0 0 0-41.728 0z"
+                    />
+                  </svg>
+                </div>
               </div>
 
               <div class="card_container">
@@ -125,6 +152,7 @@
               </div>
             </div>
           </section>
+          <!-- CONTACT -->
           <section class="page" id="contact">
             <p data-i18n="main_contact"></p>
           </section>
