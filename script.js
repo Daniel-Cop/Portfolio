@@ -150,6 +150,9 @@ function back_to() {
   document.querySelectorAll("body .star").forEach((stars) => {
     stars.style.top = `0px`;
   });
+  document.querySelectorAll(".meter").forEach((bar) => {
+    bar.classList.remove("active");
+  });
 }
 
 function about() {
@@ -162,6 +165,9 @@ function about() {
   document.getElementById("header").classList.add("on-top");
   document.querySelectorAll("body .star").forEach((stars) => {
     stars.style.top = `-1000px`;
+  });
+  document.querySelectorAll(".meter").forEach((bar) => {
+    bar.classList.add("active");
   });
 }
 
@@ -176,6 +182,9 @@ function projects() {
   document.querySelectorAll("body .star").forEach((stars) => {
     stars.style.top = `-1000px`;
   });
+  document.querySelectorAll(".meter").forEach((bar) => {
+    bar.classList.remove("active");
+  });
 }
 
 function contact() {
@@ -188,6 +197,9 @@ function contact() {
   document.getElementById("header").classList.add("on-top");
   document.querySelectorAll("body .star").forEach((stars) => {
     stars.style.top = `-1000px`;
+  });
+  document.querySelectorAll(".meter").forEach((bar) => {
+    bar.classList.remove("active");
   });
 }
 
