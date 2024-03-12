@@ -17,7 +17,7 @@
   --css: 75;
   --js: 65;
   --wp: 55;
-  --sql: 40;
+  --sql: 60;
 }
 
 * {
@@ -385,7 +385,6 @@ div#container_main .page.is-selected {
 }
 
 /* ABOUT */
-
 #about_me {
   display: flex;
   flex-direction: column;
@@ -413,6 +412,13 @@ div#container_main .page.is-selected {
 
 #about_me .bar_meter .progress_text {
   position: absolute;
+}
+
+#about_me circle.bg {
+fill: none;
+stroke-width: 6;
+stroke: var(--stars-color);
+filter: opacity(10%);
 }
 
 #about_me circle.meter {
@@ -446,8 +452,8 @@ div#container_main .page.is-selected {
 #about_me .wp.active {
   stroke-dashoffset: calc(333 - (333 * var(--wp)) / 100);
 }
-/* PROJECTS */
 
+/* PROJECTS */
 #projects div.slider_container {
   width: 100%;
   height: 100%;
