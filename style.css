@@ -13,6 +13,7 @@
   --day-gradient: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
   --pad: max(20px, 4vmin);
   --fs-text: 12px;
+  --circum: 264;
   --html: 90; /* percentage applied to the circumference */
   --css: 75;
   --js: 65;
@@ -390,6 +391,7 @@ div#container_main .page.is-selected {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 #about_me #progress_container {
@@ -412,13 +414,14 @@ div#container_main .page.is-selected {
 
 #about_me .bar_meter .progress_text {
   position: absolute;
+  font-size: 0.8rem;
 }
 
 #about_me circle.bg {
-fill: none;
-stroke-width: 6;
-stroke: var(--stars-color);
-filter: opacity(10%);
+  fill: none;
+  stroke-width: 6;
+  stroke: var(--stars-color);
+  filter: opacity(10%);
 }
 
 #about_me circle.meter {
@@ -427,30 +430,30 @@ filter: opacity(10%);
   stroke-linecap: round;
   transform-origin: 50% 50%;
   transform: rotate(-90deg);
-  stroke-dasharray: 333;
-  stroke-dashoffset: 333;
+  stroke-dasharray: var(--circum);
+  stroke-dashoffset: var(--circum);
   stroke: var(--stars-color);
   transition: stroke-dashoffset 1s ease-out 0.5s;
 }
 
 #about_me .html.active {
-  stroke-dashoffset: calc(333 - (333 * var(--html)) / 100);
+  stroke-dashoffset: calc(var(--circum) - (var(--circum) * var(--html)) / 100);
 }
 
 #about_me .css.active {
-  stroke-dashoffset: calc(333 - (333 * var(--css)) / 100);
+  stroke-dashoffset: calc(var(--circum) - (var(--circum) * var(--css)) / 100);
 }
 
 #about_me .js.active {
-  stroke-dashoffset: calc(333 - (333 * var(--js)) / 100);
+  stroke-dashoffset: calc(var(--circum) - (var(--circum) * var(--js)) / 100);
 }
 
 #about_me .sql.active {
-  stroke-dashoffset: calc(333 - (333 * var(--sql)) / 100);
+  stroke-dashoffset: calc(var(--circum) - (var(--circum) * var(--sql)) / 100);
 }
 
 #about_me .wp.active {
-  stroke-dashoffset: calc(333 - (333 * var(--wp)) / 100);
+  stroke-dashoffset: calc(var(--circum) - (var(--circum) * var(--wp)) / 100);
 }
 
 /* PROJECTS */
@@ -501,6 +504,32 @@ filter: opacity(10%);
 #projects .card.hidden_right {
   transform: translateX(500px);
   opacity: 0%;
+}
+
+/* CONTACT */
+#container_main #contact #form_container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#form_container p {
+  margin: 1rem 0 1rem 0;
+}
+
+#form_container form {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  width: 80%;
+  row-gap: 0.5rem;
+}
+
+#form_container #form_message {
+  resize: none;
 }
 
 /* ICONS LINK*/

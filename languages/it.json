@@ -9,7 +9,10 @@
   "nav_about": "Su di me",
   "nav_projects": "Progetti",
   "nav_contact": "Contatti",
-  "main_about": "Ciao! Mi chiamo Daniel.",
+  "main_about": "Ciao! Sono Daniel, uno Sviluppatore Web Full-stack in formazione. Vengo dall' Italia ma al momento vivo a Lione, in Francia. Sono alla ricerca di uno stage come Sviluppatore per il periodo che va dal 4 Settembre al 31 Ottobre. Se sei interessato non esitare a contattarmi!",
   "main_proj": "IT Lista Progetti",
-  "main_contact": "IT Come contattarmi"
+  "main_contact": "IT Come contattarmi",
+  "form_name": "Nome",
+  "form_email": "Email",
+  "form_message": "Messaggio"
 }

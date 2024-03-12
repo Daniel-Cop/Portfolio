@@ -11,5 +11,8 @@
   "nav_contact": "Contacts",
   "main_about": "Salut! Je suis Daniel.",
   "main_proj": "FR Liste de projets",
-  "main_contact": "FR Comment me contacter"
+  "main_contact": "FR Comment me contacter",
+  "form_name": "Nom",
+  "form_email": "Email",
+  "form_message": "Message"
 }

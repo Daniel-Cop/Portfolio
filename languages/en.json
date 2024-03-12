@@ -11,5 +11,8 @@
   "nav_contact": "Contact",
   "main_about": "Hi! I'm Daniel.",
   "main_proj": "EN Project list",
-  "main_contact": "EN How to contact me"
+  "main_contact": "Whether you're interested in working with me or just want to say hello, I'd love to hear from you!",
+  "form_name": "Name :",
+  "form_email": "Email :",
+  "form_message": "Message :"
 }
