@@ -18,7 +18,7 @@
   --css: 75;
   --js: 65;
   --wp: 55;
-  --sql: 60;
+  --sql: 70;
 }
 
 * {
@@ -352,7 +352,7 @@ main {
   position: fixed;
   z-index: 2;
   left: 50%;
-  top: 50%;
+  top: 60%;
   transform: translate(-50%, -50%);
   width: min(900px, calc(100% - (var(--pad) * 4)));
   height: 50%;
@@ -386,7 +386,9 @@ div#container_main .page.is-selected {
 }
 
 /* ABOUT */
-#about_me {
+#about_container {
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -394,10 +396,20 @@ div#container_main .page.is-selected {
   position: relative;
 }
 
+#presentation_container {
+  height: 60%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 0.8rem;
+}
+
 #about_me #progress_container {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 
 #about_me .bar_meter svg {
@@ -479,7 +491,7 @@ div#container_main .page.is-selected {
 
 #projects .card_container {
   position: relative;
-  width: 90%;
+  width: 100%;
   height: 100%;
   display: flex;
   justify-content: center;
@@ -516,15 +528,20 @@ div#container_main .page.is-selected {
   align-items: center;
 }
 
-#form_container p {
-  margin: 1rem 0 1rem 0;
+#form_container #call_container {
+  height: 30%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 #form_container form {
   display: flex;
   flex-direction: column;
   text-align: left;
-  width: 80%;
+  width: min(500px, 80%);
   row-gap: 0.5rem;
 }
 
@@ -563,6 +580,10 @@ body.is-preloaded #icon_link {
 
   h1 {
     font-size: 60px;
+  }
+
+  main {
+    top: 50%;
   }
 
   .box {

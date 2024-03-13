@@ -9,10 +9,11 @@
   "nav_about": "About me",
   "nav_projects": "Projects",
   "nav_contact": "Contact",
-  "main_about": "Hi! I'm Daniel.",
+  "main_about_1": "Hi! I'm Daniel, a Full-stack Web Developer in training. I'm from Italy but I currently live in Lyon, France.",
+  "main_about_2": "I am looking for an internship as a Developer for the period from 4 September to 31 October 2024. If you are interested don't hesitate to contact me!",
   "main_proj": "EN Project list",
   "main_contact": "Whether you're interested in working with me or just want to say hello, I'd love to hear from you!",
-  "form_name": "Name :",
-  "form_email": "Email :",
-  "form_message": "Message :"
+  "form_name": "Name",
+  "form_email": "Email",
+  "form_message": "Message"
 }

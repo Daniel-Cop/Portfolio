@@ -108,42 +108,47 @@
         <div id="container_main">
           <!-- ABOUT -->
           <section class="page" id="about_me">
-            <p class="content about" data-i18n="main_about"></p>
-            <div id="progress_container">
-              <div class="bar_meter">
-                <svg>
-                  <circle class="bg" cx="57" cy="57" r="42" />
-                  <circle class="meter html" cx="57" cy="57" r="42" />
-                </svg>
-                <span class="progress_text">HTML</span>
+            <div id="about_container">
+              <div id="presentation_container">
+                <p class="content about" data-i18n="main_about_1"></p>
+                <p class="content about" data-i18n="main_about_2"></p>
               </div>
-              <div class="bar_meter">
-                <svg>
-                  <circle class="bg" cx="57" cy="57" r="42" />
-                  <circle class="meter css" cx="57" cy="57" r="42" />
-                </svg>
-                <span class="progress_text">CSS</span>
-              </div>
-              <div class="bar_meter">
-                <svg>
-                  <circle class="bg" cx="57" cy="57" r="42" />
-                  <circle class="meter js" cx="57" cy="57" r="42" />
-                </svg>
-                <span class="progress_text">JavaScript</span>
-              </div>
-              <div class="bar_meter">
-                <svg>
-                  <circle class="bg" cx="57" cy="57" r="42" />
-                  <circle class="meter wp" cx="57" cy="57" r="42" />
-                </svg>
-                <span class="progress_text">WordPress</span>
-              </div>
-              <div class="bar_meter">
-                <svg>
-                  <circle class="bg" cx="57" cy="57" r="42" />
-                  <circle class="meter sql" cx="57" cy="57" r="42" />
-                </svg>
-                <span class="progress_text">SQL</span>
+              <div id="progress_container">
+                <div class="bar_meter">
+                  <svg>
+                    <circle class="bg" cx="57" cy="57" r="42" />
+                    <circle class="meter html" cx="57" cy="57" r="42" />
+                  </svg>
+                  <span class="progress_text">HTML</span>
+                </div>
+                <div class="bar_meter">
+                  <svg>
+                    <circle class="bg" cx="57" cy="57" r="42" />
+                    <circle class="meter css" cx="57" cy="57" r="42" />
+                  </svg>
+                  <span class="progress_text">CSS</span>
+                </div>
+                <div class="bar_meter">
+                  <svg>
+                    <circle class="bg" cx="57" cy="57" r="42" />
+                    <circle class="meter js" cx="57" cy="57" r="42" />
+                  </svg>
+                  <span class="progress_text">JavaScript</span>
+                </div>
+                <div class="bar_meter">
+                  <svg>
+                    <circle class="bg" cx="57" cy="57" r="42" />
+                    <circle class="meter wp" cx="57" cy="57" r="42" />
+                  </svg>
+                  <span class="progress_text">WordPress</span>
+                </div>
+                <div class="bar_meter">
+                  <svg>
+                    <circle class="bg" cx="57" cy="57" r="42" />
+                    <circle class="meter sql" cx="57" cy="57" r="42" />
+                  </svg>
+                  <span class="progress_text">SQL</span>
+                </div>
               </div>
             </div>
           </section>
@@ -188,7 +193,9 @@
           <!-- CONTACT -->
           <section class="page" id="contact">
             <div id="form_container">
-              <p data-i18n="main_contact"></p>
+              <div id="call_container">
+                <p data-i18n="main_contact"></p>
+              </div>
               <form action="">
                 <label for="form_name" data-i18n="form_name"></label>
                 <input type="text" id="form_name" />

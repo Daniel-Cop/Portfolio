@@ -9,9 +9,10 @@
   "nav_about": "Sur moi",
   "nav_projects": "Projets",
   "nav_contact": "Contacts",
-  "main_about": "Salut! Je suis Daniel.",
+  "main_about_1": "Salut! Je m'appelle Daniel, je suis un développeur Web Full-stack en formation. Je viens d'Italie mais je vis actuellement à Lyon.",
+  "main_about_2": "Je recherche un stage en tant que Développeur pour la période du 4 septembre au 31 octobre 2024. Si vous êtes intéressé n'hésitez pas à me contacter!",
   "main_proj": "FR Liste de projets",
-  "main_contact": "FR Comment me contacter",
+  "main_contact": "Que vous souhaitiez travailler avec moi ou simplement me dire bonjour, j'aimerais avoir de vos nouvelles!",
   "form_name": "Nom",
   "form_email": "Email",
   "form_message": "Message"
