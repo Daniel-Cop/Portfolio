@@ -14,7 +14,7 @@
   --pad: max(20px, 4vmin);
   --fs-text: 12px;
   --circum: 264;
-  --html: 90; /* percentage applied to the circumference */
+  --html: 85; /* percentage applied to the circumference */
   --css: 75;
   --js: 65;
   --wp: 55;
@@ -30,7 +30,7 @@
 
 body {
   display: block;
-  color: var(--stars-color);
+  color: rgb(var(--stars-color));
   font-size: var(--fs-text);
 }
 
@@ -55,7 +55,7 @@ ol {
 }
 
 a {
-  color: var(--stars-color);
+  color: rgb(var(--stars-color));
   text-decoration: none;
 }
 
@@ -120,7 +120,7 @@ body.is-preloaded .frame {
 
 .frame_line {
   position: absolute;
-  background-color: var(--stars-color);
+  background-color: rgb(var(--stars-color));
 }
 
 .frame_line-left-t {
@@ -183,7 +183,7 @@ body.is-preloaded .frame {
   position: fixed;
   z-index: 10;
   white-space: nowrap;
-  color: var(--stars-color);
+  color: rgb(var(--stars-color));
   display: flex;
   column-gap: 15px;
   cursor: pointer;
@@ -262,7 +262,7 @@ header div.title {
   flex-direction: column;
   align-items: center;
   border: 0 solid;
-  border-color: var(--stars-color);
+  border-color: rgb(var(--stars-color));
   border-top-width: 1px;
   border-bottom-width: 1px;
   padding: var(--pad);
@@ -291,7 +291,7 @@ header div.title:before {
   left: calc(50% - 1px);
   width: 1px;
   height: 50px;
-  background: var(--stars-color);
+  background: rgb(var(--stars-color));
 }
 
 h1 {
@@ -319,7 +319,7 @@ nav ul {
   margin-bottom: 0;
   list-style: none;
   padding-left: 0;
-  border: solid 1px var(--stars-color);
+  border: solid 1px rgb(var(--stars-color));
   border-radius: 4px;
 }
 
@@ -328,8 +328,8 @@ nav ul li {
 }
 
 nav ul li#li_projects {
-  border-left: 1px solid var(--stars-color);
-  border-right: 1px solid var(--stars-color);
+  border-left: 1px solid rgb(var(--stars-color));
+  border-right: 1px solid rgb(var(--stars-color));
 }
 
 nav ul li .text {
@@ -343,8 +343,9 @@ nav ul li .text {
   letter-spacing: 0.1rem;
 }
 
+nav ul li.is-selected a,
 nav ul li a:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(var(--stars-color), 0.1);
 }
 
 /* MAIN */
@@ -391,7 +392,6 @@ div#container_main .page.is-selected {
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   position: relative;
 }
@@ -404,12 +404,49 @@ div#container_main .page.is-selected {
   justify-content: center;
   align-items: center;
   row-gap: 0.8rem;
+  position: relative;
 }
 
 #about_me #progress_container {
   display: flex;
   justify-content: center;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
+  overflow: scroll;
+  /*--mask-height: 12px;
+  mask-image: linear-gradient(
+      to bottom,
+      transparent,
+      transparent var(--mask-height),
+      black,
+      black calc(100% - var(--mask-height)),
+      transparent
+    ),
+    linear-gradient(
+      to top,
+      transparent,
+      transparent var(--mask-height),
+      black,
+      black calc(100% - var(--mask-height)),
+      transparent
+    );*/
+}
+
+#top_mask {
+  width: 100%;
+  height: 12px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  mask-image: linear-gradient(to top, black, transparent);
+}
+
+#bottom_mask {
+  width: 100%;
+  height: 12px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  mask-image: linear-gradient(to bottom, black, transparent);
 }
 
 #about_me .bar_meter svg {
@@ -419,6 +456,7 @@ div#container_main .page.is-selected {
 }
 
 #about_me .bar_meter {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -432,8 +470,8 @@ div#container_main .page.is-selected {
 #about_me circle.bg {
   fill: none;
   stroke-width: 6;
-  stroke: var(--stars-color);
-  filter: opacity(10%);
+  stroke: rgba(var(--stars-color), 0.1);
+  filter: drop-shadow(0 0 5px rgba(var(--stars-color), 0.2));
 }
 
 #about_me circle.meter {
@@ -444,8 +482,9 @@ div#container_main .page.is-selected {
   transform: rotate(-90deg);
   stroke-dasharray: var(--circum);
   stroke-dashoffset: var(--circum);
-  stroke: var(--stars-color);
+  stroke: rgb(var(--stars-color));
   transition: stroke-dashoffset 1s ease-out 0.5s;
+  filter: drop-shadow(0 0 5px rgba(var(--stars-color), 0.2));
 }
 
 #about_me .html.active {
@@ -502,10 +541,18 @@ div#container_main .page.is-selected {
 #projects .card {
   position: absolute;
   transition: transform 0.75s ease-out, opacity 0.5s linear;
-  height: 250px;
-  width: 80px;
-  border: 1px solid var(--stars-color);
-  border-radius: 12px;
+  height: 280px;
+  width: 180px;
+  background: rgba(var(--stars-color), 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(var(--stars-color), 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(var(--stars-color), 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px;
 }
 
 #projects .card.hidden_left {
@@ -545,6 +592,22 @@ div#container_main .page.is-selected {
   row-gap: 0.5rem;
 }
 
+form input,
+form textarea {
+  background: rgba(var(--stars-color), 0.2);
+  border-radius: 4px;
+  box-shadow: 0 4px 30px rgba(var(--stars-color), 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(var(--stars-color), 0.3);
+  color: rgb(var(--stars-color));
+  font-size: 1rem;
+}
+
+form input {
+  height: 24px;
+}
+
 #form_container #form_message {
   resize: none;
 }
@@ -569,7 +632,7 @@ body.is-preloaded #icon_link {
 .icon {
   width: 30px;
   height: 30px;
-  fill: var(--stars-color);
+  fill: rgb(var(--stars-color));
 }
 
 /* MEDIA */

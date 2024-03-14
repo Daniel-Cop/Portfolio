@@ -24,12 +24,16 @@ function multiple_star(n) {
 
   let box_shadow = `${Math.floor(
     Math.random() * vertical_spread
-  )}px ${Math.floor(Math.random() * horizontal_spread)}px var(--stars-color)`;
+  )}px ${Math.floor(
+    Math.random() * horizontal_spread
+  )}px rgb(var(--stars-color))`;
 
   for (let i = 2; i < n; i++) {
     box_shadow = `${box_shadow}, ${Math.floor(
       Math.random() * vertical_spread
-    )}px ${Math.floor(Math.random() * horizontal_spread)}px var(--stars-color)`;
+    )}px ${Math.floor(
+      Math.random() * horizontal_spread
+    )}px rgb(var(--stars-color))`;
   }
   return box_shadow;
 }
@@ -112,7 +116,7 @@ async function changeMode(theme) {
         "--night-gradient",
         "radial-gradient(ellipse at bottom, #ececec 0%, #c4c4c4 100%)"
       );
-      root.style.setProperty("--stars-color", "black");
+      root.style.setProperty("--stars-color", "0, 0, 0");
       document.getElementById("dark_box").innerHTML = "□";
       document.getElementById("light_box").innerHTML = "■";
       break;
@@ -122,7 +126,7 @@ async function changeMode(theme) {
         "--night-gradient",
         "radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%)"
       );
-      root.style.setProperty("--stars-color", "white");
+      root.style.setProperty("--stars-color", "255, 255, 255");
       document.getElementById("dark_box").innerHTML = "■";
       document.getElementById("light_box").innerHTML = "□";
       break;
@@ -132,7 +136,7 @@ async function changeMode(theme) {
         "--night-gradient",
         "radial-gradient(ellipse at bottom, #ececec 0%, #c4c4c4 100%)"
       );
-      root.style.setProperty("--stars-color", "black");
+      root.style.setProperty("--stars-color", "0, 0, 0");
       document.getElementById("dark_box").innerHTML = "□";
       document.getElementById("light_box").innerHTML = "■";
   }
