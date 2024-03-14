@@ -346,6 +346,7 @@ nav ul li .text {
 nav ul li.is-selected a,
 nav ul li a:hover {
   background-color: rgba(var(--stars-color), 0.1);
+  backdrop-filter: blur(5px);
 }
 
 /* MAIN */
@@ -397,7 +398,7 @@ div#container_main .page.is-selected {
 }
 
 #presentation_container {
-  height: 60%;
+  height: 65%;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -411,7 +412,7 @@ div#container_main .page.is-selected {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  overflow: scroll;
+  overflow: auto;
   /*--mask-height: 12px;
   mask-image: linear-gradient(
       to bottom,
@@ -576,7 +577,7 @@ div#container_main .page.is-selected {
 }
 
 #form_container #call_container {
-  height: 30%;
+  height: 45%;
   width: 100%;
   display: flex;
   flex-direction: column;
