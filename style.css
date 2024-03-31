@@ -613,6 +613,16 @@ form input {
   resize: none;
 }
 
+form button {
+  width: 160px;
+  height: 35px;
+  border-radius: 4px;
+  color: rgb(var(--stars-color), 0.7);
+  background-color: rgba(0, 0, 0, 0);
+  border: 1px solid rgb(var(--stars-color));
+  font-size: 1rem;
+}
+
 /* ICONS LINK*/
 #icon_link {
   position: fixed;
