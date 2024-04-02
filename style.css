@@ -39,7 +39,7 @@
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
-} 
+}
 
 ::-webkit-scrollbar-track-piece {
   background: rgba(0, 0, 0, 0);
@@ -566,8 +566,8 @@ div#container_main .page.is-selected {
 #projects .card {
   position: absolute;
   transition: transform 0.75s ease-out, opacity 0.5s linear;
-  height: 280px;
-  width: 180px;
+  height: 340px;
+  width: 240px;
   background: rgba(var(--stars-color), 0.2);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(var(--stars-color), 0.1);
@@ -578,32 +578,36 @@ div#container_main .page.is-selected {
   flex-direction: column;
   align-items: center;
   padding: 8px;
+  justify-content: space-around;
 }
 
 #projects .card .proj-title {
-  position: absolute;
-  top: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 95%;
+  width: 90%;
   font-size: 1rem;
 }
 
+#projects .card .proj-img {
+  border: 1px solid rgb(var(--stars-color));
+  border-radius: 4px;
+  width: 90%;
+  height: 35%;
+}
+
+#retro-gaming-img {
+  background-image: url(./assets/tetris.webp);
+  background-position: center;
+  background-size: cover;
+}
+
 #projects .card .proj-desc {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   font-size: 0.8rem;
+  text-align: left;
+  width: 90%;
 }
 
 #projects .card a {
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
   border: 1px solid rgb(var(--stars-color));
-  width: 90px;
+  width: 160px;
   padding: 4px 0px;
   border-radius: 4px;
   font-size: 1rem;
@@ -744,9 +748,9 @@ body.is-preloaded #icon_link {
     padding: 0 1.25rem 0 1.45rem;
   }
 
-  @media screen and (min-height: 950px){
-      main {
-    top: 50%;
-  }  
+  @media screen and (min-height: 950px) {
+    main {
+      top: 50%;
+    }
   }
 }
