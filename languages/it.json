@@ -15,5 +15,7 @@
   "main_contact": "Se sei interessato a lavorare con me o se vuoi semplicemente salutarmi, mi piacerebbe sentire la tua opinione!",
   "form_name": "Nome",
   "form_email": "Email",
-  "form_message": "Messaggio"
+  "form_message": "Messaggio",
+  "send_button": "Invia",
+  "proj-desc": ""
 }

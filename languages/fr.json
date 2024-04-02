@@ -15,5 +15,7 @@
   "main_contact": "Que vous souhaitiez travailler avec moi ou simplement me dire bonjour, j'aimerais avoir de vos nouvelles!",
   "form_name": "Nom",
   "form_email": "Email",
-  "form_message": "Message"
+  "form_message": "Message",
+  "send_button": "Envoyer",
+  "proj-desc": ""
 }

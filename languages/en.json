@@ -15,5 +15,8 @@
   "main_contact": "Whether you're interested in working with me or just want to say hello, I'd love to hear from you!",
   "form_name": "Name",
   "form_email": "Email",
-  "form_message": "Message"
+  "form_message": "Message",
+  "send_button": "Send",
+  "proj1-desc": "small project description",
+  "proj2-desc": "small project description"
 }

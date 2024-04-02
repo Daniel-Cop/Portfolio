@@ -21,6 +21,30 @@
   --sql: 70;
 }
 
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 3px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+} 
+
+::-webkit-scrollbar-track-piece {
+  background: rgba(0, 0, 0, 0);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -556,6 +580,35 @@ div#container_main .page.is-selected {
   padding: 8px;
 }
 
+#projects .card .proj-title {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 95%;
+  font-size: 1rem;
+}
+
+#projects .card .proj-desc {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 0.8rem;
+}
+
+#projects .card a {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 1px solid rgb(var(--stars-color));
+  width: 90px;
+  padding: 4px 0px;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
 #projects .card.hidden_left {
   transform: translateX(-500px);
   opacity: 0%;
@@ -564,6 +617,10 @@ div#container_main .page.is-selected {
 #projects .card.hidden_right {
   transform: translateX(500px);
   opacity: 0%;
+}
+
+#projects #in-progress {
+  justify-content: center;
 }
 
 /* CONTACT */
@@ -583,6 +640,7 @@ div#container_main .page.is-selected {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 10px;
 }
 
 #form_container form {
@@ -603,6 +661,11 @@ form textarea {
   border: 1px solid rgba(var(--stars-color), 0.3);
   color: rgb(var(--stars-color));
   font-size: 1rem;
+  width: 100%;
+}
+
+form textarea {
+  height: 40%;
 }
 
 form input {
@@ -617,10 +680,18 @@ form button {
   width: 160px;
   height: 35px;
   border-radius: 4px;
-  color: rgb(var(--stars-color), 0.7);
+  color: rgb(var(--stars-color), 1);
   background-color: rgba(0, 0, 0, 0);
   border: 1px solid rgb(var(--stars-color));
   font-size: 1rem;
+  margin-top: 10px;
+  cursor: pointer;
+  align-self: center;
+}
+
+form button:hover {
+  background-color: rgba(var(--stars-color), 0.1);
+  backdrop-filter: blur(5px);
 }
 
 /* ICONS LINK*/
@@ -656,10 +727,6 @@ body.is-preloaded #icon_link {
     font-size: 60px;
   }
 
-  main {
-    top: 50%;
-  }
-
   .box {
     font-size: 25px;
   }
@@ -675,5 +742,11 @@ body.is-preloaded #icon_link {
 
   nav ul li .text {
     padding: 0 1.25rem 0 1.45rem;
+  }
+
+  @media screen and (min-height: 950px){
+      main {
+    top: 50%;
+  }  
   }
 }
