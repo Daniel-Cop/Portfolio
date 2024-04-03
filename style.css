@@ -599,6 +599,12 @@ div#container_main .page.is-selected {
   background-size: cover;
 }
 
+#business-case-img {
+  background-image: url(./assets/bellepresserie.webp);
+  background-position: center;
+  background-size: cover;
+}
+
 #projects .card .proj-desc {
   font-size: 0.8rem;
   text-align: left;
