@@ -14,11 +14,13 @@
   --pad: max(20px, 4vmin);
   --fs-text: 12px;
   --circum: 264;
-  --html: 85; /* percentage applied to the circumference */
+  --html: 80; /* percentage applied to the circumference */
   --css: 75;
   --js: 65;
   --wp: 55;
   --sql: 70;
+  --php: 85;
+  --symfony: 64;
 }
 
 ::-webkit-scrollbar {
@@ -530,6 +532,12 @@ div#container_main .page.is-selected {
 
 #about_me .wp.active {
   stroke-dashoffset: calc(var(--circum) - (var(--circum) * var(--wp)) / 100);
+}
+#about_me .php.active {
+  stroke-dashoffset: calc(var(--circum) - (var(--circum) * var(--php)) / 100);
+}
+#about_me .symfony.active {
+  stroke-dashoffset: calc(var(--circum) - (var(--circum) * var(--symfony)) / 100);
 }
 
 /* PROJECTS */
